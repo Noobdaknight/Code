@@ -2,20 +2,25 @@ import tkinter as tk
 from tkinter import messagebox
 
 # Saved list for questions
-questions = ('What is the first enemies you fight in the game?',
-'What is the second rank of danger the Library achieves?',
-'What is the name of the Patron Librarian of the floor of Art?',
-'On clash lose what emotion point is generated?',
-'What are the special pages given after reaching a higher emotion level?',
-'Who is the first ego user you fight?',
-'What is the first abnormality you fight in game?',
-'What is R corps Singularity',
+questions = ("What is the first enemies you fight in the game?",
+"What is the second rank of danger the Library achieves?",
+"What is the name of the Patron Librarian of the floor of Art?",
+"On clash lose what emotion point is generated?",
+"What are the special pages given after reaching a higher emotion level?",
+"Who is the first ego user you fight?",
+"What is the first abnormality you fight in game?",
+"What is R corps Singularity",
 "What is Gebura's original name?",
 "What is the name of the Corporation that is above the rest",
 "How manys abnormality fights are there on Hokma's floor",
 "Roland has one major friend who appears late into the game, Who is he?",
 "What was Binah's original ocupation",
 "Baral/The Executioner uses a variety of serums when fighting you. What were they?",
+"What are the abnormalites on Chesed's floor based on",
+"Who is the Leader of R Corp's Fourth Pack",
+"What is Boundary of Deaths Maximum Roll without Power Gain or Loss",
+"What is Roland inspired/based on",
+"Who faces L'Heure Du Loup",
 "What is the single highest rolling page in Library of Ruina",)
 
 # Saved list for answers
@@ -34,16 +39,21 @@ options_list = [
     ["A, Angelica", "B, Angelica", "C, Argalia", "D, Olivier",],
     ["A, Extraction Team leader", "B, Head's Agent", "C, F Corp's CEO", "D, Angela's helper",],
     ["A, Serum R, K, F", "B, Serum K, F, C", "C, Serum W, R, K", "D, Serum T, L, K",],
+    ["A, Pirates of Penzance","B, Harry Potter","C, The Four Divine Beasts","D, The Wizard of Oz",],
+    ["A, Myo", "B, Nikolai", "C, Rudolph", "D, Maxim",],
+    ["A, 49", "B, 4", "C, 5", "D, 6",],
+    ["A, Furioso", "B, The Knights of the Round Table", "C, Orlando Furioso", "D, Orlando",],
+    ["A, Tipereth", "B, Roland", "C, Binah", "D, Gebura",],
     ["A, The Knowning I", "B, This is this", "C, That is that", "D, Library of Ruina",],
 ]
 
 # Saved variables
-answers = ("C", "D", "B", "A", "B", "A", "D", "C", "B", "D", "C", "D", "C", "C", "A",)
+answers = ("C", "D", "B", "A", "B", "A", "D", "C", "B", "D", "C", "D", "B", "C", "D", "B", "B", "C", "D", "A",)
 current_question_index = 0
 score = 0
 
 root = tk.Tk()
-root.geometry("800x500")
+root.geometry("1000x500")
 root.title("Ruina Quiz")
 
 # Lebel to welcome the user
@@ -146,6 +156,8 @@ def next_question():
     else:
         # Displays the final results and score
         messagebox.showinfo("Quiz Finished", f"you got {score} out of {len(questions)} correct!")
+        root.mainloop.close()
+
         
     btn1.config(state=tk.NORMAL)
     btn2.config(state=tk.NORMAL)
