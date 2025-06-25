@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
+from tkinter import PhotoImage
 
 # Saved list for questions
 questions = ("What is the first enemies you fight in the game?",
@@ -55,6 +56,12 @@ score = 0
 root = tk.Tk()
 root.geometry("1000x500")
 root.title("Ruina Quiz")
+image_path=PhotoImage(file=r"C:\Users\YOURNAMEHERE\Downloads\Ruina_quiz\Background.png")
+
+# Adds the Background image
+bg_image=tk.Label(root,image=image_path)
+bg_image.pack()
+bg_image.place(relheight=1, relwidth=1)
 
 # Lebel to welcome the user
 def welcome():
@@ -67,6 +74,7 @@ image_label.pack(pady=20) # Adds space before the options
 # Lebel to display the question
 question_label = tk.Label(root, text=questions[current_question_index], font=('Arial', 18))
 question_label.pack(padx=20, pady=20)
+question_label.config(background="#7FD7DA")
 
 # Frame for the buttons
 buttonframe = tk.Frame(root)
@@ -84,12 +92,13 @@ btn4 = tk.Button(buttonframe, text="", font=("Arial", 18,))
 # Restary button
 restart_btn = tk.Button(root, text="Restart?", font=('Arial', 18,), command=lambda:restart_question())
 restart_btn.pack(padx=50, pady=10)
+restart_btn.config(background="#7FD7DA")
 
 #  Attach button actions for each answer option
-btn1.config(command=lambda: check_answer("A"))
-btn2.config(command=lambda: check_answer("B"))
-btn3.config(command=lambda: check_answer("C"))
-btn4.config(command=lambda: check_answer("D"))
+btn1.config(command=lambda: check_answer("A"), background="#7FD7DA")
+btn2.config(command=lambda: check_answer("B"), background="#7FD7DA")
+btn3.config(command=lambda: check_answer("C"), background="#7FD7DA")
+btn4.config(command=lambda: check_answer("D"), background="#7FD7DA")
 
 # Grid layout for the buttons
 btn1.grid(row=1, column=0, sticky=tk.W+tk.E)
@@ -169,5 +178,5 @@ update_question()
 
 # Welcome the user
 welcome()
-
+root.configure()
 root.mainloop()
